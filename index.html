@@ -6,57 +6,82 @@
     <title>Document</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="queries.css">
 </head>
     <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: aliceblue;
-            min-height: 100vh;
-        }
-        .button{
-            padding: 14px 32px;
-           background-color: red;
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-family: sans-serif;
-            font-weight: 600;
-        }
-        .button:hover,
-        .button:active{
-            cursor: pointer;
-            color: red;
-            background-color: #fff;
-            transition: 0.3s all;
-        }
-        input{
-            opacity: 0;
-        }
-        label{
-            width: 30px;
-            height: 30px;
-        }
-        ion-icon{
-            width: 100%;
-            height: 100%;
-        }
-        input:checked + label{
-            color: red;
-            
-        }
-label:hover{
-            cursor: pointer;
-        }
     </style>
 <body>
-    <a href="" class="button">subscribe</a>
-    <input id="yeah" type="checkbox">
-<label for="yeah">
-    <ion-icon name="heart-outline"></ion-icon>
-</label>
+
+    <!-- <p id="output">result</p> -->
+     <div class="main-container">
+     <div class="main-content">
+    <div class="bill-container">
+        <p class="bill-head">billy charges</p>
+        <div class="bill-flex-list">
+            <p class="list-items color-blue">units consumed</p>
+            <input type="number" class="list-items" id="myUnits" onchange="calcBill()"></input>
+        <p class="list-items color-blue">cost of electricity</p>
+        <p class="list-items" id="billCost">0</p>
+        <p class="list-items color-blue">meter rent</p>
+        <p class="list-items" id="meterRent" >0</p>
+        <p class="list-items color-blue">f.c surcharge</p>
+        <p class="list-items" id="fSurcharge">0</p>
+        <p class="list-items color-blue">total</p>
+        <p class="list-items" id="FirstTotal">0</p>
+    </div>
+</div>
+
+<div class="bill-container">
+    <p class="bill-head color-coral">extra charges</p>
+    <div class="bill-flex-list">
+        <p class="list-items color-blue color-coral">electricity duty</p>
+        <p class="list-items" id="elecDuty">0</p>
+        <p class="list-items color-blue color-coral">tv fee</p>
+        <p class="list-items" id="tv">0</p>
+        <p class="list-items color-blue color-coral">income tax</p>
+        <p class="list-items" id="incomeTax">0</p>
+        <p class="list-items color-blue color-coral">tax percent</p>
+        <p class="list-items" id="taxpercent">0</p>
+        <p class="list-items color-blue color-coral">total</p>
+        <p class="list-items" id="SecondTotal">0</p>
+    </div>
+</div>
+
+<div class="bill-container">
+    <p class="bill-head">total charges</p>
+    <div class="bill-flex-list">
+        <p class="list-items color-blue">arrear/age</p>
+        <p class="list-items">0</p>
+        <p class="list-items color-blue">current bill</p>
+        <p class="list-items" id="CurrentBill">0</p>
+        <p class="list-items color-blue">total fpa</p>
+        <p class="list-items" id="fpa" ></p>
+        <p class="list-items color-blue color-red">payable within due date</p>
+        <p class="list-items" id="duedate">0</p>
+        <p class="list-items color-blue">l.p. surcharge</p>
+        <p class="list-items" id="surcharge">0</p>
+        <p class="list-items color-blue color-red">payable after due date</p>
+        <p class="list-items" id="finaltotal">0</p>
+    </div>
+</div>
+</div>
+<div class="calculation-block">
+    <p class="calculation-head">bill calculation</p>
+    <div class="calculation-text">
+        <div class="calculation-upper-area">
+            <p class="calculation-desc">GOP Tariff</p>
+            <p class="calculation-desc">X</p>
+            <p class="calculation-desc">Units</p>
+        </div>
+        <div class="calculation-lower-area">
+            <p class="calculation-desc" id="unitPrice">0</p>
+            <p class="calculation-desc">X</p>
+            <p class="calculation-desc" id="lowerUnits">0</p>
+        </div>
+    </div>
+</div>
+</div>
 </body>
 </html>

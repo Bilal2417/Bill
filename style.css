@@ -24,6 +24,9 @@ align-items: center;
     background-color: rgb(176 232 254);
     color: rgb(119 135 168);
 }
+.bill-head{
+    padding-block: 8px;
+}
 .color-coral{
     background-color: rgb(252 176 187);
 }

@@ -28,11 +28,12 @@ let units =document.getElementById("myUnits").value;
         taxPercent =0;
         totalBill =0;
         FsurCharge = 0;
-        firstTotal = meterRent;
         dueDate = 0;
         surCharge = 0;
         let lowerUnits = units;
+        fuelPrice = Math.floor(Math.random()*350);
         electricityFee = Math.floor(Math.random()*350);
+        Gst = Math.floor(Math.random()*2000);
         console.log("Your total bill is: Rs",bill);
         console.log("Price per unit is : Rs",pricePerUnit);
         console.log("Calculated tax is: Rs",tax);
@@ -42,11 +43,14 @@ let units =document.getElementById("myUnits").value;
         document.getElementById("incomeTax").textContent = tax;
         document.getElementById("taxpercent").textContent = taxPercent;
         document.getElementById("meterRent").textContent = meterRent;
+        document.getElementById("FuelPrice").textContent = fuelPrice;
         document.getElementById("fSurcharge").textContent = FsurCharge;
+        firstTotal = meterRent + fuelPrice;
         document.getElementById("FirstTotal").textContent = firstTotal;
         document.getElementById("elecDuty").textContent = electricityFee;
         document.getElementById("tv").textContent = Tv;
-        secondTotal = electricityFee + Tv;
+        document.getElementById("gst").textContent = Gst;
+        secondTotal =  electricityFee + Gst + Tv;
         document.getElementById("SecondTotal").textContent = secondTotal;
         currentBill = firstTotal + secondTotal;
         document.getElementById("CurrentBill").textContent = currentBill;
@@ -86,7 +90,6 @@ let units =document.getElementById("myUnits").value;
             taxPercent = 50;
         }
         else {
-            console.log("Please use less Electricity");
             pricePerUnit = 75;
             tax = ( ( units * pricePerUnit)*60)/100;    /*65% tax*/
             taxPercent = 65;

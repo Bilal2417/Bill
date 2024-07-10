@@ -3,19 +3,18 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+    .margintop{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
 @media(max-width:720px){
-    .main-container{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding-bottom: 10%;
-    }
     .main-content{
-        padding-top: 10%;
+        padding-block: 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
     .calculation-block {
         width: 400px;
@@ -25,7 +24,14 @@
     .bill-container {
         max-width: 300px;
     }
+    .list-items{
+        width: 145px;
+    }
     .calculation-block {
         width: 310px;
+    }
+    .margintop{
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
 }

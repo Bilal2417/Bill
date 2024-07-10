@@ -140,6 +140,10 @@ console.log(vCode)
         if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5"){
             dCode = vCode;
         }
+        else if(vCode =="" ||vCode == " " || vCode == "  " || vCode == "   " || vCode == "    " || vCode == "     "){
+            dCode = "XXXXX"
+            console.log(vCode)
+        }
         else{
             dCode = "INVALID";
         }
@@ -160,7 +164,6 @@ console.log(vCode)
         // finalTotal = billDiscount + surCharge;
         console.log(finalTotal)
         finalTotal = billDiscount + surCharge;
-
         let lowerUnits = units;
  document.getElementById("duedate").textContent = dueDate;
  document.getElementById("finaltotal").textContent = finalTotal;

@@ -15,13 +15,13 @@
 <body>
 
     <!-- <p id="output">result</p> -->
-     <div class="main-container">
+
      <div class="main-content">
     <div class="bill-container">
         <p class="bill-head">billy charges</p>
         <div class="bill-flex-list">
             <p class="list-items color-blue">units consumed</p>
-            <input type="number" class="list-items" id="myUnits" onchange="calcBill()" placeholder="Enter Units"></input>
+            <input type="number" class="list-items" id="myUnits" onchange="calcBill()" placeholder="Enter Units" required></input>
         <p class="list-items color-blue">cost of electricity</p>
         <p class="list-items"  id="billCost" >0</p>
         <p class="list-items color-blue">meter rent</p>
@@ -31,7 +31,7 @@
         <p class="list-items color-blue">f.c surcharge</p>
         <p class="list-items" id="fSurcharge">0</p>
         <p class="list-items color-blue">total</p>
-        <p class="list-items" id="FirstTotal">0</p>
+        <p class="list-items text-bold" id="FirstTotal">0</p>
         <p class="list-items color-blue margintop">Enter code</p>
     <input type="text" class="list-items margintop" id="Vcode" placeholder="OPTIONAL" onchange="calcBill()" minlength="5" maxlength="5">
     </div>
@@ -51,7 +51,7 @@
         <p class="list-items color-blue color-coral">tax percent</p>
         <p class="list-items" id="taxpercent">0</p>
         <p class="list-items color-blue color-coral">total</p>
-        <p class="list-items" id="SecondTotal">0</p>
+        <p class="list-items text-bold" id="SecondTotal">0</p>
     </div>
 </div>
 
@@ -70,7 +70,7 @@
         <p class="list-items" id="Dcode"></p>
         <p class="list-items color-blue">discount</p>
         <p class="list-items" id="discount">0</p>
-        <p class="list-items color-blue">total bill after discount</p>
+        <p class="list-items color-blue color-red">total bill after discount</p>
         <p class="list-items" id="BillDiscount">0</p>
         <p class="list-items color-blue">l.p. surcharge</p>
         <p class="list-items" id="surcharge">0</p>
@@ -78,18 +78,17 @@
         <p class="list-items" id="finaltotal">0</p>
     </div>
 </div>
-</div>
 <div class="calculation-block">
     <p class="calculation-head">bill calculation</p>
     <div class="calculation-text">
         <div class="calculation-upper-area">
-            <p class="calculation-desc">GOP Tariff</p>
-            <p class="calculation-desc">X</p>
-            <p class="calculation-desc">Units</p>
+            <p class="calculation-desc text-bold">GOP Tariff</p>
+            <p class="calculation-desc text-bold">X</p>
+            <p class="calculation-desc text-bold">Units</p>
         </div>
         <div class="calculation-lower-area">
             <p class="calculation-desc" id="unitPrice">0</p>
-            <p class="calculation-desc">X</p>
+            <p class="calculation-desc text-bold">X</p>
             <p class="calculation-desc" id="lowerUnits">0</p>
         </div>
     </div>

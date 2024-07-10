@@ -16,7 +16,7 @@ align-items: center;
 .bill-container{
     display: flex;
     flex-direction: column;
-    max-width: 340px;
+    max-width: 339px;
 }
 .bill-head,
 .color-blue{
@@ -41,7 +41,7 @@ align-items: center;
     font-weight: 600;
 }
 .list-items{
-    width: 170px;
+    width: 168px;
     text-align: center;
     display: flex;
     font-size: 14px;
@@ -51,7 +51,9 @@ align-items: center;
     border: 1px solid #777;
 }
 #myUnits,
-#myUnits:focus{
+#myUnits:focus,
+#Vcode,
+#Vcode:focus{
     border: none;
     outline: 1px solid #777;
 }
@@ -86,4 +88,12 @@ justify-content: space-evenly;
 .calculation-desc{
     width: 150px;
     text-align: center;
+}
+.margintop{
+    margin-top: 30px;
+}
+#duedate,
+#Dcode,
+#finaltotal{
+    font-weight: 600;
 }

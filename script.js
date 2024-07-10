@@ -12,13 +12,17 @@ var surCharge;
 var meterRent;
 var electricityFee;
 var Gst;
+var dCode;
 let Tv = 35;
 let dueDate;
 let firstTotal;
 let secondTotal;
+let Discount;
+let billDiscount;
 let finalTotal;
 let units =document.getElementById("myUnits").value;
-
+let vCode = document.getElementById("Vcode").value
+console.log(vCode)
     if(units < 200){
 
         bill =0;
@@ -127,11 +131,36 @@ let units =document.getElementById("myUnits").value;
         
         totalFpa = Math.ceil(Math.random()*500);
         surCharge = Math.ceil(Math.random()*3000);
+  
         document.getElementById("fpa").textContent = totalFpa;
         document.getElementById("surcharge").textContent = surCharge;
 
-        dueDate = currentBill + totalFpa;
-        finalTotal = dueDate + surCharge;
+
+        dueDate = Math.ceil(currentBill + totalFpa);
+        if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5"){
+            dCode = vCode;
+        }
+        else{
+            dCode = "INVALID";
+        }
+        console.log(dCode)
+        if(dCode == "BILLY"){
+            Discount = Math.round((dueDate*50)/100);
+        }
+        else if(dCode == "WP3G6" || dCode == "A8SJ5"){
+            Discount = Math.round((dueDate*15)/100);
+        }
+        else{
+            Discount = 0;
+        }
+        billDiscount = dueDate - Discount;
+        document.getElementById("Dcode").textContent = dCode;
+        document.getElementById("discount").textContent = Discount;
+        document.getElementById("BillDiscount").textContent = billDiscount;
+        // finalTotal = billDiscount + surCharge;
+        console.log(finalTotal)
+        finalTotal = billDiscount + surCharge;
+
         let lowerUnits = units;
  document.getElementById("duedate").textContent = dueDate;
  document.getElementById("finaltotal").textContent = finalTotal;

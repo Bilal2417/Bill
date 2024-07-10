@@ -6,17 +6,23 @@ let taxPercent;
 let totalBill;
 let currentBill;
 var totalFpa;
+var fuelPrice;
 var FsurCharge;
 var surCharge;
 var meterRent;
 var electricityFee;
+var Gst;
+var dCode;
 let Tv = 35;
 let dueDate;
 let firstTotal;
 let secondTotal;
+let Discount;
+let billDiscount;
 let finalTotal;
 let units =document.getElementById("myUnits").value;
-
+let vCode = document.getElementById("Vcode").value
+console.log(vCode)
     if(units < 200){
 
         bill =0;
@@ -26,11 +32,12 @@ let units =document.getElementById("myUnits").value;
         taxPercent =0;
         totalBill =0;
         FsurCharge = 0;
-        firstTotal = meterRent;
         dueDate = 0;
         surCharge = 0;
         let lowerUnits = units;
+        fuelPrice = Math.floor(Math.random()*350);
         electricityFee = Math.floor(Math.random()*350);
+        Gst = Math.floor(Math.random()*2000);
         console.log("Your total bill is: Rs",bill);
         console.log("Price per unit is : Rs",pricePerUnit);
         console.log("Calculated tax is: Rs",tax);
@@ -40,11 +47,14 @@ let units =document.getElementById("myUnits").value;
         document.getElementById("incomeTax").textContent = tax;
         document.getElementById("taxpercent").textContent = taxPercent;
         document.getElementById("meterRent").textContent = meterRent;
+        document.getElementById("FuelPrice").textContent = fuelPrice;
         document.getElementById("fSurcharge").textContent = FsurCharge;
+        firstTotal = meterRent + fuelPrice;
         document.getElementById("FirstTotal").textContent = firstTotal;
         document.getElementById("elecDuty").textContent = electricityFee;
         document.getElementById("tv").textContent = Tv;
-        secondTotal = electricityFee + Tv;
+        document.getElementById("gst").textContent = Gst;
+        secondTotal =  electricityFee + Gst + Tv;
         document.getElementById("SecondTotal").textContent = secondTotal;
         currentBill = firstTotal + secondTotal;
         document.getElementById("CurrentBill").textContent = currentBill;
@@ -84,7 +94,6 @@ let units =document.getElementById("myUnits").value;
             taxPercent = 50;
         }
         else {
-            console.log("Please use less Electricity");
             pricePerUnit = 75;
             tax = ( ( units * pricePerUnit)*60)/100;    /*65% tax*/
             taxPercent = 65;
@@ -99,15 +108,19 @@ let units =document.getElementById("myUnits").value;
         console.log("Bill after applying tax is : Rs",totalBill)
         
         meterRent = Math.floor(Math.random()*30);
+        fuelPrice = Math.floor(Math.random()*350);
         FsurCharge = Math.ceil(Math.random()*2500);
         electricityFee = Math.floor(Math.random()*350);
+        Gst = Math.floor(Math.random()*2000);
         document.getElementById("meterRent").textContent = meterRent;
+        document.getElementById("FuelPrice").textContent = fuelPrice;
         document.getElementById("fSurcharge").textContent = FsurCharge;
-        firstTotal = bill + meterRent +FsurCharge;
+        firstTotal = bill + meterRent + fuelPrice +FsurCharge;
         document.getElementById("FirstTotal").textContent = firstTotal;
         document.getElementById("elecDuty").textContent = electricityFee;
         document.getElementById("tv").textContent = Tv;
-        secondTotal = tax + electricityFee;
+        document.getElementById("gst").textContent = Gst;
+        secondTotal = tax + electricityFee + Gst + Tv;
         document.getElementById("SecondTotal").textContent = secondTotal;
         currentBill = firstTotal + secondTotal;
         document.getElementById("CurrentBill").textContent = currentBill;
@@ -118,11 +131,36 @@ let units =document.getElementById("myUnits").value;
         
         totalFpa = Math.ceil(Math.random()*500);
         surCharge = Math.ceil(Math.random()*3000);
+  
         document.getElementById("fpa").textContent = totalFpa;
         document.getElementById("surcharge").textContent = surCharge;
 
-        dueDate = currentBill + totalFpa;
-        finalTotal = dueDate + surCharge;
+
+        dueDate = Math.ceil(currentBill + totalFpa);
+        if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5"){
+            dCode = vCode;
+        }
+        else{
+            dCode = "INVALID";
+        }
+        console.log(dCode)
+        if(dCode == "BILLY"){
+            Discount = Math.round((dueDate*50)/100);
+        }
+        else if(dCode == "WP3G6" || dCode == "A8SJ5"){
+            Discount = Math.round((dueDate*15)/100);
+        }
+        else{
+            Discount = 0;
+        }
+        billDiscount = dueDate - Discount;
+        document.getElementById("Dcode").textContent = dCode;
+        document.getElementById("discount").textContent = Discount;
+        document.getElementById("BillDiscount").textContent = billDiscount;
+        // finalTotal = billDiscount + surCharge;
+        console.log(finalTotal)
+        finalTotal = billDiscount + surCharge;
+
         let lowerUnits = units;
  document.getElementById("duedate").textContent = dueDate;
  document.getElementById("finaltotal").textContent = finalTotal;

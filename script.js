@@ -137,7 +137,8 @@ console.log(vCode)
 
 
         dueDate = Math.ceil(currentBill + totalFpa);
-        if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5"){
+        if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5" || vCode == "J3VC4" || vCode == "KW2N8" || vCode == "PS9B5"
+           || vCode == "OWB4I" || vCode == "MUZAN" || vCode == "ISB38" || vCode == "7W3PS" || vCode == "RB3F7"){
             dCode = vCode;
         }
         else if(vCode =="" ||vCode == " " || vCode == "  " || vCode == "   " || vCode == "    " || vCode == "     "){
@@ -151,8 +152,11 @@ console.log(vCode)
         if(dCode == "BILLY"){
             Discount = Math.round((dueDate*50)/100);
         }
-        else if(dCode == "WP3G6" || dCode == "A8SJ5"){
+        else if(dCode == "WP3G6" || dCode == "A8SJ5" || dCode == "J3VC4" || dCode == "KW2N8" || dCode == "PS9B5"){
             Discount = Math.round((dueDate*15)/100);
+        }
+        else if(dCode == "OWB4I" || dCode == "MUZAN" || dCode == "ISB38" || dCode == "7W3PS" || dCode == "RB3F7"){
+            Discount = Math.round((dueDate*25)/100);
         }
         else{
             Discount = 0;

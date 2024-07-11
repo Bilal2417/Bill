@@ -17,7 +17,7 @@ align-items: center;
 .bill-container{
     display: flex;
     flex-direction: column;
-    max-width: 339px;
+    max-width: 337px;
 }
 .bill-head,
 .color-blue{
@@ -27,6 +27,7 @@ align-items: center;
 }
 .bill-head{
     padding-block: 8px;
+    width: 337px;
 }
 .color-coral{
     background-color: rgb(252 176 187);
@@ -41,7 +42,7 @@ align-items: center;
     font-weight: 600;
 }
 .list-items{
-    width: 168px;
+    width: 166.5px;
     text-align: center;
     display: flex;
     font-size: 14px;
@@ -63,7 +64,7 @@ align-items: center;
     place-items: center;
 }
 .calculation-block{
-    width: 339px;
+    width: 337px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -90,7 +91,7 @@ justify-content: space-evenly;
     text-align: center;
 }
 .margintop{
-    margin-top: 30px;
+    margin-top: 31.5px;
 }
 #duedate,
 #Dcode,

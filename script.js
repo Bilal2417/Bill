@@ -18,6 +18,7 @@ let dueDate;
 let firstTotal;
 let secondTotal;
 let Discount;
+let dPer;
 let billDiscount;
 let finalTotal;
 let units =document.getElementById("myUnits").value;
@@ -140,29 +141,36 @@ console.log(vCode)
         if(vCode == "BILLY" || vCode =="WP3G6" || vCode == "A8SJ5" || vCode == "J3VC4" || vCode == "KW2N8" || vCode == "PS9B5"
            || vCode == "OWB4I" || vCode == "MUZAN" || vCode == "ISB38" || vCode == "7W3PS" || vCode == "RB3F7"){
             dCode = vCode;
+            dPer = "0%";
         }
         else if(vCode =="" ||vCode == " " || vCode == "  " || vCode == "   " || vCode == "    " || vCode == "     "){
             dCode = "XXXXX"
             console.log(vCode)
+              dPer = "0%";
         }
         else{
             dCode = "INVALID";
+               dPer = "0%"
         }
         console.log(dCode)
         if(dCode == "BILLY"){
             Discount = Math.round((dueDate*50)/100);
+            dPer = "50%"
         }
         else if(dCode == "WP3G6" || dCode == "A8SJ5" || dCode == "J3VC4" || dCode == "KW2N8" || dCode == "PS9B5"){
             Discount = Math.round((dueDate*15)/100);
+            dPer = "15%"
         }
         else if(dCode == "OWB4I" || dCode == "MUZAN" || dCode == "ISB38" || dCode == "7W3PS" || dCode == "RB3F7"){
             Discount = Math.round((dueDate*25)/100);
+            dPer = "25%"
         }
         else{
             Discount = 0;
         }
         billDiscount = dueDate - Discount;
         document.getElementById("Dcode").textContent = dCode;
+        document.getElementById("dper").textContent = dPer;
         document.getElementById("discount").textContent = Discount;
         document.getElementById("BillDiscount").textContent = billDiscount;
         // finalTotal = billDiscount + surCharge;
